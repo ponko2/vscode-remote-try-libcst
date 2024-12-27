@@ -21,3 +21,9 @@ uvx pre-commit install
 ```sh
 uv run -m libcst.tool codemod constant_folding.ConvertConstantCommand --help
 ```
+
+### Testing Codemods
+
+```sh
+uv run -m unittest ponko2.codemod.commands.tests.test_constant_folding
+```
