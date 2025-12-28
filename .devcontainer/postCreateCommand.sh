@@ -2,10 +2,12 @@
 
 set -euo pipefail
 
-git config --global --add safe.directory /workspaces/vscode-remote-try-libcst
-
 sudo chown -R "$(whoami):" /home/vscode/.cache
 
-curl -LsSf https://astral.sh/uv/install.sh | sh
+nix profile add nixpkgs#nix-direnv
+mkdir -p ~/.config/direnv
+echo "source ~/.nix-profile/share/nix-direnv/direnvrc" >> ~/.config/direnv/direnvrc
 
-uv sync
+nix print-dev-env >/dev/null
+
+direnv allow

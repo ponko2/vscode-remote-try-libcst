@@ -19,4 +19,5 @@ wheels/
 .ruff_cache/
 
 # Node.js
+.pnpm-store/
 node_modules/
