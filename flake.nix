@@ -30,11 +30,16 @@
           devShells.default = pkgs.mkShellNoCC {
             packages = with pkgs; [
               editorconfig-checker
+              nixfmt-rfc-style
               nodejs
               pnpm
               uv
               yamllint
             ];
+            shellHook = ''
+              pnpm install
+              uv sync --all-extras --locked
+            '';
           };
           formatter = pkgs.nixfmt-tree;
         };
