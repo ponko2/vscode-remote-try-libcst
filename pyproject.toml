@@ -11,7 +11,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "mypy>=1.19.1",
-    "ruff>=0.15.0",
+    "ruff>=0.15.1",
 ]
 
 [tool.ruff.format]
